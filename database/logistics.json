@@ -1,0 +1,12 @@
+{
+    "records": [
+        {
+            "logistic_id":"",
+            "logistic_origin":"",
+            "logistic_destination":"",
+            "logistic_weight":"",
+            "logistic_price":"",
+            "category_id":""
+        }
+    ]
+}
