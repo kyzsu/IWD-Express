@@ -1,1 +1,10 @@
-{"records":[]}
+{
+    "records": [
+        {
+            "username": "test",
+            "email": "testbot@uksw.edu",
+            "phonenumber": "14022",
+            "password": "halokfc"
+        }
+    ]
+}

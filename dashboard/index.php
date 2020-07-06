@@ -159,6 +159,15 @@ $transactions = json_decode($transactionfile,true);
             </tr>
           </thead>
           <tbody>
+          <?php if (count($transactions) < 1) {
+              echo "<tr>";
+                echo "<td>Data Kosong</td>";
+                echo "<td>Data Kosong</td>";
+                echo "<td>Data Kosong</td>";
+                echo "<td>Data Kosong</td>";
+                echo "<td>Data Kosong</td>";
+              echo "</tr>";
+            }?>
             <?php $no=0;
               foreach ($transactions as $row => $obj): $no++;
             ?>
