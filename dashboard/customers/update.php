@@ -33,8 +33,7 @@ if (isset($_POST["id"])) {
 <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="tutorial-boostrap-merubaha-warna">
- <title>Tutorial Boostrap </title>
+ <title>Update Customer</title>
  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
  
  <style type="text/css">
@@ -84,7 +83,7 @@ if (isset($_POST["id"])) {
     
    <div class="form-actions">
     <button type="submit" class="btn btn-primary">Update</button>
-    <a class="btn btn btn-default" href="index.php">Back</a>
+    <a class="btn btn btn-default" href="../index.php">Back</a>
    </div>
   </div>
   </form>

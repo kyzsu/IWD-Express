@@ -1,16 +1,10 @@
 {
-    "records": [
+    "records":[
         {
-            "username": "test",
-            "email": "testbot@uksw.edu",
-            "phonenumber": "14022",
-            "password": "halokfc"
-        },
-        {
-            "username": "dandy_k",
-            "email": "672017202@student.uksw.edu",
-            "phonenumber": "081234567890",
-            "password": "uksw2017"
+            "username":"test",
+            "email":"testbot@uksw.edu",
+            "phonenumber":"14022",
+            "password":"halokfc"
         }
     ]
 }

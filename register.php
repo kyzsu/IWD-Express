@@ -22,8 +22,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
     <title>IWD Express - Register</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
@@ -53,7 +51,7 @@
   <body class="text-center">
     <form class="form-signin" method="POST">
       <a href="index.php"><img class="mb-2" src="./assets/brand/logo_transparent.png" alt="" width="150" height="150"></a>
-      <h1 class="h3 mb-3 font-weight-normal">Please fill this form</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Customer Register Form</h1>
       <label for="inputUsername" class="sr-only">Username</label>
       <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" required autofocus>
       <label for="inputEmail" class="sr-only">Email</label>
