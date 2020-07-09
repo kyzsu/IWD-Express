@@ -30,16 +30,16 @@
     <link href="./css/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin" method="POST" action="validatorcustomer.php">
+    <form class="form-signin" method="POST" action="validatoradmin.php">
   <a href="index.php"><img class="mb-2" src="./assets/brand/logo_transparent.png" alt="" width="150" height="150"></a>
-  <h1 class="h4 mb-3 font-weight-normal">Please sign in to continue</h1>
+  <h1 class="h3 mb-3 font-weight-normal">Administrator</h1>
   <label for="inputUsername" class="sr-only">Username</label>
   <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <a href="signup.php"><small class="form-text text-muted">don't have an account?</small></a>
-  <p class="mt-5 mb-3 text-muted">&copy; IWD Express 2020</p>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  <!-- <a href="register.php"><small class="form-text text-muted">don't have an account?</small></a> -->
+  <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
 </form>
 </body>
 </html>

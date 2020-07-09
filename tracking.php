@@ -1,11 +1,19 @@
 <?php
-  require "indexheader.php";
+  require "templates/indexheader.php";
+  session_start();
 ?>
 
         <a class="nav-link" href="index.php">Home</a>
         <a class="nav-link active" href="#">Tracking</a>
         <a class="nav-link" href="about.php">About</a>
-        <a class="nav-link" href="signin.php">Login</a>
+        <?php
+          if (!isset($_SESSION['username'])) {
+            echo "<a class='nav-link' href='signin.php'>Login</a>";              
+          } else {
+            echo "<a class='nav-link' href='profile.php'>Profile</a>";
+            echo "<a class='nav-link' href='signout.php'>Log out</a>";
+          }
+        ?>
       </nav>
     </div>
   </header>
@@ -21,5 +29,5 @@
   </main>
 
 <?php
-  require "indexfooter.php";
+  require "templates/indexfooter.php";
 ?>

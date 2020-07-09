@@ -5,6 +5,12 @@
             "email":"testbot@uksw.edu",
             "phonenumber":"14022",
             "password":"halokfc"
+        },
+        {
+            "username":"672017207",
+            "email":"testbot@uksw.edu",
+            "phonenumber":"14022",
+            "password":"123"
         }
     ]
 }
