@@ -1,6 +1,5 @@
 <?php
   require "templates/indexheader.php";
-  session_start();
 ?>
 
         <a class="nav-link" href="index.php">Home</a>

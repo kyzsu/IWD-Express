@@ -1,7 +1,5 @@
 <?php
   require "templates/indexheader.php";
-  session_start();
-  // $_SESSION['username'] = "Williams";
 ?>
             <a class="nav-link active" href="#">Home</a>
             <a class="nav-link" href="tracking.php">Tracking</a>

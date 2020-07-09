@@ -1,3 +1,21 @@
+<?php
+  session_start();
+  if (!isset($_SESSION['username'])) {
+    
+  } else {
+    $customerfile = file_get_contents('./database/customers.json');
+    $customers = json_decode($customerfile,true);
+    $jumlah['records'] = count($customers["records"]);
+
+    for($i=0; $i < $jumlah['records']; $i++) {
+      if($customers['records'][$i]['username'] == $_SESSION['username']) {
+        $username = $customers['records'][$i]['username'];
+        $email = $customers['records'][$i]['email'];
+        $phonenumber = $customers['records'][$i]['phonenumber'];
+      }
+    }
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
