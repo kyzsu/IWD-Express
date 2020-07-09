@@ -61,7 +61,7 @@
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-      <a href="signin.php"><small class="form-text text-muted">Already have an account?</small></a>
+      <a href="#"><small class="form-text text-muted">Already have an account?</small></a>
       <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form>
 </body>

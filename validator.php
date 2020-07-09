@@ -25,6 +25,6 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 if($success == TRUE) {
   header("Location: dashboard/index.php");
 } else {
-  header("Location: signin.php");
+  header("Location: admin.php");
 }
 ?>
