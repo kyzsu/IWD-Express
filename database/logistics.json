@@ -1,17 +1,6 @@
 {
     "records": [
         {
-            "logisticId": "L001",
-            "originAddress": "Sumba",
-            "shipper": "Kevin",
-            "addressee": "Kevin",
-            "destinationAddress": "Jl. adas",
-            "city": "X",
-            "status": "-",
-            "weight": "1",
-            "jenis": "ONS"
-        },
-        {
             "logisticId": "L002",
             "originAddress": "Kupang",
             "shipper": "William",
@@ -21,6 +10,17 @@
             "status": "-",
             "weight": "3.5",
             "jenis": "SDS"
+        },
+        {
+            "logisticId": "L001",
+            "originAddress": "Sumba",
+            "shipper": "Kevin",
+            "addressee": "Kevin",
+            "destinationAddress": "Jl. adas",
+            "city": "Semarang",
+            "status": "-",
+            "weight": "1",
+            "jenis": "REG"
         }
     ]
 }

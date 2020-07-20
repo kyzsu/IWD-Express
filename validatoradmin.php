@@ -10,6 +10,8 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         if($employees['records'][$i]['username'] == $_POST['username']) {
             if($employees['records'][$i]['password'] == $_POST['password']) {
                 $success = TRUE;
+                session_start();
+                $_SESSION['administrator'] = $_POST['username'];
                 break;
             } else {
                 $success = FALSE;
