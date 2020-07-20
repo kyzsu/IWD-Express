@@ -1,4 +1,5 @@
 <?php
+require "../sessioncrud.php";
     if ( !empty($_POST)) { 
     
         $logistic_id = $_POST['logistic_id'];

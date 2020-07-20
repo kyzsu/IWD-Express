@@ -1,9 +1,9 @@
 <?php
 session_start();
 if (!isset($_SESSION['administrator'])) {
-    header('Location: ../login.php');
+    header('Location: ../../login.php');
 } else {
-  $employeefile = file_get_contents('../database/employees.json');
+  $employeefile = file_get_contents('../../database/employees.json');
   $employees = json_decode($employeefile, true);
   $jumlah['records'] = count($employees["records"]);
 

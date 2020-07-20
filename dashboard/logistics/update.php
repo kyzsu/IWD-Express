@@ -1,4 +1,5 @@
 <?php
+require "../sessioncrud.php";
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
     $getfile = file_get_contents('../../database/logistics.json');

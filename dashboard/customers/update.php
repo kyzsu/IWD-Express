@@ -1,4 +1,5 @@
 <?php
+require "../sessioncrud.php";
 if (isset($_GET["id"])) {
   $id = (int) $_GET["id"];
   $getfile = file_get_contents('../../database/customers.json');
