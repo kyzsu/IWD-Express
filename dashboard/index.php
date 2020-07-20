@@ -62,7 +62,7 @@ $logistics = json_decode($logisticfile,true);
         </button>
       </div>
       <div class="modal-body">
-      <form method="POST" action="newlogistic.php">
+      <form method="POST" action="./logistics/new.php">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label>Logistic ID</label>
@@ -86,9 +86,12 @@ $logistics = json_decode($logisticfile,true);
           <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="destinationAddress" required>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-5">
             <label>City</label>
             <input type="text" class="form-control" id="inputCity" name="city" required>
+          </div>
+          <div class="form-group col-md-1">
+            <input type="hidden" class="form-control" id="inputStatus" name="status" value="-" required>
           </div>
           <div class="form-group col-md-3">
             <label>Weight</label>
@@ -452,7 +455,7 @@ $logistics = json_decode($logisticfile,true);
               <td><?php echo $obj['jenis']; ?></td>
               <td>
                 <a class="btn btn-xs btn-warning" href="logistics/update.php?id=<?php echo $row; ?>">Edit</a>
-                <!-- <a class="btn btn-xs btn-danger" href="transactions/delete.php?id=<?php echo $row; ?>">Delete</a> -->
+                <!-- <a class="btn btn-xs btn-danger" href="logistics/delete.php?id=<?php echo $row; ?>">Delete</a> -->
               </td>
             </tr>
             <?php endforeach; ?>
@@ -499,5 +502,9 @@ $logistics = json_decode($logisticfile,true);
       $('#tableLogistics').DataTable();
       } );
     </script>
+
+    <!-- sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   </body>
 </html>

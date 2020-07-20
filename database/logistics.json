@@ -2,43 +2,25 @@
     "records": [
         {
             "logisticId": "L001",
-            "originAddress": "Kupang",
-            "shipper": "William",
-            "addressee": "Angel",
-            "destinationAddress": "Jl. Kemiri 2",
-            "city": "Salatiga",
-            "weight": "3",
+            "originAddress": "Sumba",
+            "shipper": "Kevin",
+            "addressee": "Kevin",
+            "destinationAddress": "Jl. adas",
+            "city": "X",
+            "status": "-",
+            "weight": "1",
             "jenis": "ONS"
         },
         {
             "logisticId": "L002",
             "originAddress": "Kupang",
             "shipper": "William",
-            "addressee": "Spongebob",
-            "destinationAddress": "Jl. Krabby patty",
-            "city": "Bikini Bottom",
-            "weight": "3",
-            "jenis": "TDS"
-        },
-        {
-            "logisticId": "L003",
-            "originAddress": "Sumba",
-            "shipper": "Kevin",
-            "addressee": "Kevin",
-            "destinationAddress": "Jl. Kemiri Candi",
-            "city": "salatiga",
-            "weight": "4",
-            "jenis": "TDS"
-        },
-        {
-            "logisticId": "L004",
-            "originAddress": "Sumba",
-            "shipper": "Kevin",
-            "addressee": "Kevin",
-            "destinationAddress": "Jl. adas",
-            "city": "X",
-            "weight": "1",
-            "jenis": "ONS"
+            "addressee": "Angel L.",
+            "destinationAddress": "Jl Asia Afrika No. 69",
+            "city": "Bandung",
+            "status": "-",
+            "weight": "3.5",
+            "jenis": "SDS"
         }
     ]
 }

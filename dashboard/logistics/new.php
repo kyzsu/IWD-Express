@@ -11,14 +11,14 @@
         $status = "";
       
   #panggil json
-  $logisticfile = file_get_contents('../database/logistics.json');
+  $logisticfile = file_get_contents('../../database/logistics.json');
   $data = json_decode($logisticfile, true);
   unset($_POST["add"]);
   $data["records"] = array_values($data["records"]);
   array_push($data["records"], $_POST);
-  file_put_contents("../database/logistics.json", json_encode($data, JSON_PRETTY_PRINT));
-  header("Location: index.php");
+  file_put_contents("../../database/logistics.json", json_encode($data, JSON_PRETTY_PRINT));
+  header("Location: ../index.php");
     }
 
-    #$transactionfile = file_get_contents('../database/transactions.json');
+    $transactionfile = file_get_contents('../../database/transactions.json');
 ?>
