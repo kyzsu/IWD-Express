@@ -3,6 +3,8 @@ $customerfile = file_get_contents('../database/customers.json');
 $customers = json_decode($customerfile,true);
 $transactionfile = file_get_contents('../database/transactions.json');
 $transactions = json_decode($transactionfile,true);
+$logisticfile = file_get_contents('../database/logistics.json');
+$logistics = json_decode($logisticfile,true);
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,6 +16,9 @@ $transactions = json_decode($transactionfile,true);
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
     <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 
     <style>
       .bd-placeholder-img {
@@ -57,54 +62,62 @@ $transactions = json_decode($transactionfile,true);
         </button>
       </div>
       <div class="modal-body">
-      <form>
+      <form method="POST" action="newlogistic.php">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <label>Logistic ID</label>
+            <input type="text" class="form-control" id="txtLogisticId" name="logisticId" required>
           </div>
           <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
+            <label>Origin</label>
+            <input type="text" class="form-control" id="txtLogisticOrigin" name="originAddress" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Shipper</label>
+            <input type="text" class="form-control" id="txtLogisticShipper" name="shipper" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Addressee</label>
+            <input type="text" class="form-control" id="txtLogisticAddressee" name="addressee" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <label>Destination Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="destinationAddress" required>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
+            <label>City</label>
+            <input type="text" class="form-control" id="inputCity" name="city" required>
           </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
+          <div class="form-group col-md-3">
+            <label>Weight</label>
+            <input type="text" class="form-control" id="inputWeight" name="weight" required>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Type</label>
+            <select class="form-control" name="jenis">
+              <option selected disabled>...</option>
+              <option>SDS</option>  
+              <option>ONS</option>
+              <option>TDS</option>
+              <option>REG</option>
+              <option>ECO</option>
             </select>
           </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-          </div>
         </div>
-      </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">Confirm</button>
+        <button type="submit" class="btn btn-success">Confirm</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="modalCustomer" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="modalCustomer" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -114,54 +127,35 @@ $transactions = json_decode($transactionfile,true);
         </button>
       </div>
       <div class="modal-body">
-      <form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
-          </div>
+      <form method="POST" action="newcustomer.php">
+        <div class="form-group">
+          <label for="inputUsername" class="sr-only">Username</label>
+          <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" required autofocus>
         </div>
         <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <label for="inputEmail" class="sr-only">Email</label>
+          <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email" required autofocus>
         </div>
         <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <label for="inputPhoneNumber" class="sr-only">PhoneNumber</label>
+          <input type="text" id="inputPhoneNumber" class="form-control" name="phonenumber" placeholder="Phone Number" required autofocus>
         </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-          </div>
+        <div class="form-group">
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
         </div>
-      </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-warning">Confirm</button>
       </div>
+      </form>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Modal -->
-<div class="modal fade" id="modalEmployee" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="modalEmployee" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -215,7 +209,7 @@ $transactions = json_decode($transactionfile,true);
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <div class="container-fluid">
@@ -226,8 +220,7 @@ $transactions = json_decode($transactionfile,true);
           <li class="nav-item">
             <a class="nav-link active" href="#">
               <span data-feather="home"></span>
-              Dashboard 
-              <!-- <span class="sr-only">(current)</span> -->
+              Dashboard
             </a>
           </li>
           <li class="nav-item">
@@ -236,12 +229,6 @@ $transactions = json_decode($transactionfile,true);
               Transactions
             </a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Products
-            </a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#customers">
               <span data-feather="users"></span>
@@ -254,12 +241,6 @@ $transactions = json_decode($transactionfile,true);
               Reports
             </a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              Integrations
-            </a>
-          </li> -->
         </ul>
 
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -268,7 +249,7 @@ $transactions = json_decode($transactionfile,true);
             <span data-feather="plus-circle"></span>
           </button>
         </h6>
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Customer Form</span>
           <button type="button" class="btn btn-outline-dark d-flex align-items-center text-muted" data-toggle="modal" data-target="#modalCustomer">
             <span data-feather="plus-circle"></span>
@@ -279,7 +260,7 @@ $transactions = json_decode($transactionfile,true);
           <button type="button" class="btn btn-outline-dark d-flex align-items-center text-muted" data-toggle="modal" data-target="#modalEmployee">
             <span data-feather="plus-circle"></span>
           </button>
-        </h6>
+        </h6> -->
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Export Transaction History</span>
           <button type="button" class="btn btn-outline-dark d-flex align-items-center text-muted">
@@ -334,9 +315,9 @@ $transactions = json_decode($transactionfile,true);
 
       <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-      <h2 id="transactions">Transactions</h2>
+      <h2 id="transactions" style="margin-top: 10px;">Transactions</h2>
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm" id="tableTransactions">
           <thead>
             <tr>
               <th>#</th>
@@ -386,9 +367,10 @@ $transactions = json_decode($transactionfile,true);
         </table>
       </div>
 
-      <h2 id="customers">Customers</h2>
+      
+      <h2 id="customers" style="margin-top: 10px;">Customers</h2>
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm" id="tableCustomers">
           <thead>
             <tr>
               <th>#</th>
@@ -432,6 +414,65 @@ $transactions = json_decode($transactionfile,true);
           </tfoot>
         </table>
       </div>
+
+      
+      <h2 id="Logistics" style="margin-top: 10px;">Logistics</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm" id="tableLogistics">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Logistic ID</th>
+              <th>Sender</th>
+              <th>Receiver</th>
+              <th>Destination</th>
+              <th>Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php if (count($logistics) < 1) {
+              echo "<tr>";
+                echo "<td>Data Kosong</td>";
+                echo "<td>Data Kosong</td>";
+                echo "<td>Data Kosong</td>";
+                echo "<td>Data Kosong</td>";
+                echo "<td>Data Kosong</td>";
+              echo "</tr>";
+            }?>
+            <?php $no=0;
+              foreach ($logistics['records'] as $row => $obj): $no++;
+            ?>
+            <tr>
+              <td><?php echo $no; ?></td>
+              <td><?php echo $obj['logisticId']; ?></td>
+              <td><?php echo $obj['shipper']; ?></td>
+              <td><?php echo $obj['addressee']; ?></td>
+              <td><?php echo $obj['destinationAddress'].", ".$obj['city']; ?></td>
+              <td><?php echo $obj['jenis']; ?></td>
+              <td>
+                <a class="btn btn-xs btn-warning" href="logistics/update.php?id=<?php echo $row; ?>">Edit</a>
+                <!-- <a class="btn btn-xs btn-danger" href="transactions/delete.php?id=<?php echo $row; ?>">Delete</a> -->
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+          <tfoot>
+            <tr>
+            <th>#</th>
+              <th>Logistic ID</th>
+              <th>Sender</th>
+              <th>Receiver</th>
+              <th>Destination</th>
+              <th>Type</th>
+              <th>Action</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+
+
     </main>
   </div>
 </div>
@@ -440,5 +481,23 @@ $transactions = json_decode($transactionfile,true);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script src="dashboard.js"></script>
-</body>
+
+    <!-- datatables -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <script>
+      $(document).ready( function () {
+      $('#tableTransactions').DataTable();
+      } );
+    </script>
+    <script>
+      $(document).ready( function () {
+      $('#tableCustomers').DataTable();
+      } );
+    </script>
+    <script>
+      $(document).ready( function () {
+      $('#tableLogistics').DataTable();
+      } );
+    </script>
+  </body>
 </html>

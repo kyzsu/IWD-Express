@@ -1,10 +1,1 @@
-{
-    "records": [
-        {
-            "transaction_id": "TR001",
-            "transaction_date": "2020-01-20",
-            "logistic_id": "L006",
-            "employee_id": "IWD003"
-        }
-    ]
-}
+{"records":[]}
