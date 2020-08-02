@@ -21,5 +21,5 @@ require "../sessioncrud.php";
   header("Location: ../index.php");
     }
 
-    $transactionfile = file_get_contents('../../database/transactions.json');
+    // $transactionfile = file_get_contents('../../database/transactions.json');
 ?>

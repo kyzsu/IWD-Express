@@ -57,7 +57,7 @@ $customers = json_decode($customerfile, true);
   </nav>
 
   <!-- Modal -->
-  <div class="modal fade" id="modalTransaction" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="modalLogistic" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -67,7 +67,7 @@ $customers = json_decode($customerfile, true);
           </button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="./transactions/new.php">
+          <form method="POST" action="./logistics/new.php">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label>Logistic ID</label>
@@ -129,17 +129,11 @@ $customers = json_decode($customerfile, true);
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
+              <a class="nav-link" href="index.php">
                 <span data-feather="home"></span>
                 Dashboard
               </a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#transactions">
-                <span data-feather="file"></span>
-                Transactions
-              </a>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="customer.php">
                 <span data-feather="users"></span>
@@ -147,7 +141,7 @@ $customers = json_decode($customerfile, true);
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="logistic.php">
+              <a class="nav-link active" href="#">
                 <span data-feather="bar-chart-2"></span>
                 Logistics
               </a>
@@ -155,8 +149,8 @@ $customers = json_decode($customerfile, true);
           </ul>
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Transaction Form</span>
-            <button type="button" class="btn btn-outline-dark d-flex align-items-center text-muted" data-toggle="modal" data-target="#modalTransaction">
+            <span>Logistic Form</span>
+            <button type="button" class="btn btn-outline-dark d-flex align-items-center text-muted" data-toggle="modal" data-target="#modalLogistic">
               <span data-feather="plus-circle"></span>
             </button>
           </h6>
@@ -184,23 +178,22 @@ $customers = json_decode($customerfile, true);
           </div>
         </div>
 
-        <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
-
-        <h2 id="transactions" style="margin-top: 10px;">Transactions</h2>
+        <h2 id="Logistics" style="margin-top: 10px;">Logistics</h2>
         <div class="table-responsive">
-          <table class="table table-striped table-sm" id="tableTransactions">
+          <table class="table table-striped table-sm" id="tableLogistics">
             <thead>
               <tr>
                 <th>#</th>
-                <th>Transaction ID</th>
-                <th>Transaction Date</th>
                 <th>Logistic ID</th>
-                <th>Processed By</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Destination</th>
+                <th>Type</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <?php if (count($transactions) < 1) {
+              <?php if (count($logistics) < 1) {
                 echo "<tr>";
                 echo "<td>Data Kosong</td>";
                 echo "<td>Data Kosong</td>";
@@ -210,17 +203,18 @@ $customers = json_decode($customerfile, true);
                 echo "</tr>";
               } ?>
               <?php $no = 0;
-              foreach ($transactions['records'] as $row => $obj) : $no++;
+              foreach ($logistics['records'] as $row => $obj) : $no++;
               ?>
                 <tr>
                   <td><?php echo $no; ?></td>
-                  <td><?php echo $obj['transaction_id']; ?></td>
-                  <td><?php echo $obj['transaction_date']; ?></td>
-                  <td><?php echo $obj['logistic_id']; ?></td>
-                  <td><?php echo $obj['employee_id']; ?></td>
+                  <td><?php echo $obj['logisticId']; ?></td>
+                  <td><?php echo $obj['shipper']; ?></td>
+                  <td><?php echo $obj['addressee']; ?></td>
+                  <td><?php echo $obj['destinationAddress'] . ", " . $obj['city']; ?></td>
+                  <td><?php echo $obj['jenis']; ?></td>
                   <td>
-                    <a class="btn btn-xs btn-warning" href="transactions/update.php?id=<?php echo $row; ?>">Edit</a>
-                    <a class="btn btn-xs btn-danger" href="transactions/delete.php?id=<?php echo $row; ?>">Delete</a>
+                    <a class="btn btn-xs btn-warning" href="logistics/update.php?id=<?php echo $row; ?>">Edit</a>
+                    <a class="btn btn-xs btn-danger" href="logistics/delete.php?id=<?php echo $row; ?>">Delete</a>
                   </td>
                 </tr>
               <?php endforeach; ?>
@@ -228,15 +222,19 @@ $customers = json_decode($customerfile, true);
             <tfoot>
               <tr>
                 <th>#</th>
-                <th>Transaction ID</th>
-                <th>Transaction Date</th>
                 <th>Logistic ID</th>
-                <th>Processed By</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Destination</th>
+                <th>Type</th>
                 <th>Action</th>
               </tr>
             </tfoot>
           </table>
         </div>
+
+
+
       </main>
     </div>
   </div>

@@ -1,10 +1,46 @@
 {
     "records": [
         {
-            "username": "Immanuelirsal",
-            "email": "iwd@iwdexpress.com",
-            "phonenumber": "081238872896",
-            "password": "admin123"
+            "username": "IWDSalatiga",
+            "email": "salatiga@iwdexpress.com",
+            "phonenumber": "081212125001",
+            "password": "adminsalatiga",
+            "cabang": "Salatiga"
+        },
+        {
+            "username": "IWDSolo",
+            "email": "solo@iwdexpress.com",
+            "phonenumber": "081212125002",
+            "password": "adminsolo",
+            "cabang": "Solo"
+        },
+        {
+            "username": "IWDSemarang",
+            "email": "semarang@iwdexpress.com",
+            "phonenumber": "081212125003",
+            "password": "adminsemarang",
+            "cabang": "Semarang"
+        },
+        {
+            "username": "IWDBandung",
+            "email": "bandung@iwdexpress.com",
+            "phonenumber": "081212125004",
+            "password": "adminbandung",
+            "cabang": "Bandung"
+        },
+        {
+            "username": "IWDJakarta",
+            "email": "jakarta@iwdexpress.com",
+            "phonenumber": "081212125004",
+            "password": "adminjakarta",
+            "cabang": "Jakarta"
+        },
+        {
+            "username": "IWDYogya",
+            "email": "yogya@iwdexpress.com",
+            "phonenumber": "081212125004",
+            "password": "adminyogya",
+            "cabang": "Yogya"
         }
     ]
 }

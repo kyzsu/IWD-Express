@@ -7,7 +7,7 @@
             "addressee": "Angel L.",
             "destinationAddress": "Jl Asia Afrika No. 69",
             "city": "Bandung",
-            "status": "-",
+            "status": [""],
             "weight": "3.5",
             "jenis": "SDS"
         },
@@ -18,9 +18,20 @@
             "addressee": "Kevin",
             "destinationAddress": "Jl. adas",
             "city": "Semarang",
-            "status": "-",
+            "status": [""],
             "weight": "1",
             "jenis": "REG"
+        },
+        {
+            "logisticId": "L005",
+            "originAddress": "Salatiga",
+            "shipper": "William",
+            "addressee": "Willy",
+            "destinationAddress": "Jl Asia Afrika No. 1",
+            "city": "Bandung",
+            "status": [""],
+            "weight": "3",
+            "jenis": "ONS"
         }
     ]
 }
