@@ -178,6 +178,7 @@ $customers = json_decode($customerfile, true);
                 <th>Sender</th>
                 <th>Receiver</th>
                 <th>Destination</th>
+                <th>Weight (kg)</th>
                 <th>Type</th>
                 <th>Action</th>
               </tr>
@@ -185,6 +186,7 @@ $customers = json_decode($customerfile, true);
             <tbody>
               <?php if (count($logistics) < 1) {
                 echo "<tr>";
+                echo "<td>Data Kosong</td>";
                 echo "<td>Data Kosong</td>";
                 echo "<td>Data Kosong</td>";
                 echo "<td>Data Kosong</td>";
@@ -201,6 +203,7 @@ $customers = json_decode($customerfile, true);
                   <td><?php echo $obj['shipper']; ?></td>
                   <td><?php echo $obj['addressee']; ?></td>
                   <td><?php echo $obj['destinationAddress'] . ", " . $obj['city']; ?></td>
+                  <td><?php echo $obj['weight']; ?></td>
                   <td><?php echo $obj['jenis']; ?></td>
                   <td>
                     <a class="btn btn-xs btn-warning" href="logistics/update.php?id=<?php echo $row; ?>">Edit</a>
@@ -216,6 +219,7 @@ $customers = json_decode($customerfile, true);
                 <th>Sender</th>
                 <th>Receiver</th>
                 <th>Destination</th>
+                <th>Weight (kg)</th>
                 <th>Type</th>
                 <th>Action</th>
               </tr>
