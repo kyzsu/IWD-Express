@@ -4,7 +4,8 @@
             "transaction_id": "TR001",
             "transaction_date": "2020-05-02",
             "logistic_id": "L001",
-            "employee_id": "IWD003"
+            "employee_id": "IWDSalatiga",
+            "transaction_status": "Layover in Salatiga"
         }
     ]
 }

@@ -61,7 +61,7 @@ $customers = json_decode($customerfile, true);
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Logistic Form</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Transaction Form</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -70,19 +70,19 @@ $customers = json_decode($customerfile, true);
           <form method="POST" action="./transactions/new.php">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label>Logistic ID</label>
+                <label>Transaction ID</label>
                 <input type="text" class="form-control" id="txtLogisticId" name="logisticId" required>
               </div>
               <div class="form-group col-md-6">
-                <label>Origin</label>
+                <label>Transaction Date</label>
                 <input type="text" class="form-control" id="txtLogisticOrigin" name="originAddress" required>
               </div>
               <div class="form-group col-md-6">
-                <label>Shipper</label>
+                <label>Logistic</label>
                 <input type="text" class="form-control" id="txtLogisticShipper" name="shipper" required>
               </div>
               <div class="form-group col-md-6">
-                <label>Addressee</label>
+                <!-- <label>Addressee</label> -->
                 <input type="text" class="form-control" id="txtLogisticAddressee" name="addressee" required>
               </div>
             </div>
@@ -131,7 +131,7 @@ $customers = json_decode($customerfile, true);
             <li class="nav-item">
               <a class="nav-link active" href="#">
                 <span data-feather="home"></span>
-                Dashboard
+                Transaction
               </a>
             </li>
             <!-- <li class="nav-item">
@@ -172,7 +172,7 @@ $customers = json_decode($customerfile, true);
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2" id="dashboard">Dashboard</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
+          <!-- <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
               <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
@@ -181,7 +181,7 @@ $customers = json_decode($customerfile, true);
               <span data-feather="calendar"></span>
               This week
             </button>
-          </div>
+          </div> -->
         </div>
 
         <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
@@ -196,12 +196,14 @@ $customers = json_decode($customerfile, true);
                 <th>Transaction Date</th>
                 <th>Logistic ID</th>
                 <th>Processed By</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <?php if (count($transactions) < 1) {
                 echo "<tr>";
+                echo "<td>Data Kosong</td>";
                 echo "<td>Data Kosong</td>";
                 echo "<td>Data Kosong</td>";
                 echo "<td>Data Kosong</td>";
@@ -218,6 +220,7 @@ $customers = json_decode($customerfile, true);
                   <td><?php echo $obj['transaction_date']; ?></td>
                   <td><?php echo $obj['logistic_id']; ?></td>
                   <td><?php echo $obj['employee_id']; ?></td>
+                  <td><?php echo $obj['transaction_status']; ?></td>
                   <td>
                     <a class="btn btn-xs btn-warning" href="transactions/update.php?id=<?php echo $row; ?>">Edit</a>
                     <a class="btn btn-xs btn-danger" href="transactions/delete.php?id=<?php echo $row; ?>">Delete</a>
@@ -232,6 +235,7 @@ $customers = json_decode($customerfile, true);
                 <th>Transaction Date</th>
                 <th>Logistic ID</th>
                 <th>Processed By</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </tfoot>

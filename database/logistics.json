@@ -1,24 +1,12 @@
 {
     "records": [
         {
-            "logisticId": "L002",
-            "originAddress": "Kupang",
-            "shipper": "William",
-            "addressee": "Angel L.",
-            "destinationAddress": "Jl Asia Afrika No. 69",
-            "city": "Bandung",
-            "status": [""],
-            "weight": "3.5",
-            "jenis": "SDS"
-        },
-        {
             "logisticId": "L001",
             "originAddress": "Sumba",
             "shipper": "Kevin",
             "addressee": "Kevin",
             "destinationAddress": "Jl. adas",
             "city": "Semarang",
-            "status": [""],
             "weight": "1",
             "jenis": "REG"
         },
@@ -29,9 +17,18 @@
             "addressee": "Willy",
             "destinationAddress": "Jl Asia Afrika No. 1",
             "city": "Bandung",
-            "status": [""],
             "weight": "3",
             "jenis": "ONS"
+        },
+        {
+            "logisticId": "L002",
+            "originAddress": "Kupang",
+            "shipper": "William",
+            "addressee": "Angel L.",
+            "destinationAddress": "Jl Asia Afrika No. 69",
+            "city": "Bandung",
+            "weight": "3.5",
+            "jenis": "REG"
         }
     ]
 }

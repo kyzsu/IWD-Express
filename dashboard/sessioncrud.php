@@ -12,6 +12,7 @@ if (!isset($_SESSION['administrator'])) {
       $username = $employees['records'][$i]['username'];
       $email = $employees['records'][$i]['email'];
       $phonenumber = $employees['records'][$i]['phonenumber'];
+      $cabang = $employees['records'][$i]['cabang'];
     }
   }
   

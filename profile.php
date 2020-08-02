@@ -39,7 +39,7 @@
                 <input type="checkbox" class="form-check-input" id="Check1" required autofocus>
                 <label class="form-check-label" for="exampleCheck1">I have checked all of my data.</label>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Save</button>
             </form>
             </div>
           </div>
