@@ -10,7 +10,7 @@ if (isset($_GET["id"])) {
     if ($jsonfile) {
         unset($all["records"][$id]);
         $all["records"] = array_values($all["records"]);
-        file_put_contents("../../database/transactions.json", json_encode($all));
+        file_put_contents("../../database/transactions.json", json_encode($all, JSON_PRETTY_PRINT));
     }
     header("Location: ../index.php");
 }

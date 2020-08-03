@@ -78,41 +78,17 @@ $customers = json_decode($customerfile, true);
                 <input type="text" class="form-control" id="txtLogisticOrigin" name="originAddress" required>
               </div>
               <div class="form-group col-md-6">
-                <label>Logistic</label>
+                <label>Logistic ID</label>
                 <input type="text" class="form-control" id="txtLogisticShipper" name="shipper" required>
               </div>
               <div class="form-group col-md-6">
-                <!-- <label>Addressee</label> -->
-                <input type="text" class="form-control" id="txtLogisticAddressee" name="addressee" required>
+                <label>Processed By</label>
+                <input type="text" class="form-control" id="txtLogisticShipper" name="shipper" required>
               </div>
             </div>
             <div class="form-group">
-              <label>Destination Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="destinationAddress" required>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-5">
-                <label>City</label>
-                <input type="text" class="form-control" id="inputCity" name="city" required>
-              </div>
-              <div class="form-group col-md-1">
-                <input type="hidden" class="form-control" id="inputStatus" name="status" value="-" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label>Weight</label>
-                <input type="text" class="form-control" id="inputWeight" name="weight" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label>Type</label>
-                <select class="form-control" name="jenis">
-                  <option selected disabled>...</option>
-                  <option>SDS</option>
-                  <option>ONS</option>
-                  <option>TDS</option>
-                  <option>REG</option>
-                  <option>ECO</option>
-                </select>
-              </div>
+              <label>Status</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Status" name="destinationAddress" required>
             </div>
         </div>
         <div class="modal-footer">
