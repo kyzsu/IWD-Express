@@ -75,11 +75,18 @@ $customers = json_decode($customerfile, true);
               </div>
               <div class="form-group col-md-6">
                 <label>Origin</label>
-                <input type="text" class="form-control" id="txtLogisticOrigin" name="originAddress" required>
+                <input type="text" class="form-control" id="txtLogisticOrigin" name="originAddress" value="<?php echo $cabang;?>" required>
               </div>
               <div class="form-group col-md-6">
                 <label>Shipper</label>
-                <input type="text" class="form-control" id="txtLogisticShipper" name="shipper" required>
+                <select class="form-control" name="shipper">
+                  <option>...</option>
+                  <?php
+                  foreach ($customers['records'] as $row => $obj) :
+                  ?>
+                    <option><?php echo $obj['username']; ?></option>
+                  <?php endforeach; ?>
+                </select>
               </div>
               <div class="form-group col-md-6">
                 <label>Addressee</label>
@@ -100,15 +107,13 @@ $customers = json_decode($customerfile, true);
               </div>
               <div class="form-group col-md-3">
                 <label>Weight</label>
-                <input type="text" class="form-control" id="inputWeight" name="weight" required>
+                <input type="number" class="form-control" id="inputWeight" name="weight" required>
               </div>
               <div class="form-group col-md-3">
                 <label>Type</label>
                 <select class="form-control" name="jenis">
                   <option selected disabled>...</option>
-                  <option>SDS</option>
                   <option>ONS</option>
-                  <option>TDS</option>
                   <option>REG</option>
                   <option>ECO</option>
                 </select>

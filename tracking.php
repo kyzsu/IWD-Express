@@ -44,9 +44,10 @@ if (!isset($_SESSION['username'])) {
   </form>
   <?php if (isset($status)) : ?>
     <h3>Status Terkini <?php echo $nomor;?></h3>
-    <p><?php echo $status ?></p>
+    <p><?php echo $status." ✔" ?></p>
+  <?php else : ?>
+    <h3>Nomor tracking tidak ditemukan ❌</h3>
   <?php endif; ?>
-
 </main>
 <?php
 require "templates/indexfooter.php";

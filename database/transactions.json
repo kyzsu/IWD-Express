@@ -1,1 +1,18 @@
-{"records":[{"transaction_id":"TR001","transaction_date":"2020-05-02","logistic_id":"L001","employee_id":"IWDSalatiga","transaction_status":"Layover in Salatiga"}]}
+{
+    "records": [
+        {
+            "transaction_id": "TR001",
+            "transaction_date": "2020-08-03 08:07:10pm",
+            "logistic_id": "L001",
+            "employee_id": "IWDSalatiga",
+            "transaction_status": "Processing package in Salatiga"
+        },
+        {
+            "transaction_id": "TR002",
+            "transaction_date": "2020-08-03 08:07:27pm",
+            "logistic_id": "L002",
+            "employee_id": "IWDSalatiga",
+            "transaction_status": "Processing package in Salatiga"
+        }
+    ]
+}

@@ -8,6 +8,7 @@ $logisticfile = file_get_contents('../database/logistics.json');
 $logistics = json_decode($logisticfile, true);
 $customerfile = file_get_contents('../database/customers.json');
 $customers = json_decode($customerfile, true);
+date_default_timezone_set('Asia/Jakarta');
 ?>
 <!doctype html>
 <html lang="en">
@@ -71,24 +72,32 @@ $customers = json_decode($customerfile, true);
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label>Transaction ID</label>
-                <input type="text" class="form-control" id="txtLogisticId" name="logisticId" required>
+                <input type="text" class="form-control" id="txtTransactionId" name="transaction_id" required>
               </div>
               <div class="form-group col-md-6">
                 <label>Transaction Date</label>
-                <input type="text" class="form-control" id="txtLogisticOrigin" name="originAddress" required>
+                <input type="text" class="form-control" id="txtTransactionDate" name="transaction_date" value="<?php echo date("Y-m-d h:i:sa") ?>" required>
               </div>
               <div class="form-group col-md-6">
                 <label>Logistic ID</label>
-                <input type="text" class="form-control" id="txtLogisticShipper" name="shipper" required>
+                <select class="form-control" name="logistic_id">
+                  <option>...</option>
+                  <?php
+                  foreach ($logistics['records'] as $row => $obj) :
+                  ?>
+                    <option><?php echo $obj['logisticId']; ?></option>
+                  <?php endforeach; ?>
+                </select>
               </div>
+
               <div class="form-group col-md-6">
                 <label>Processed By</label>
-                <input type="text" class="form-control" id="txtLogisticShipper" name="shipper" required>
+                <input type="text" class="form-control" id="txtProcessedBy" name="employee_id" value="<?php echo $_SESSION['administrator'] ?>" required>
               </div>
             </div>
             <div class="form-group">
               <label>Status</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Status" name="destinationAddress" required>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Status" name="transaction_status" value="<?php echo $cabang ?>" required>
             </div>
         </div>
         <div class="modal-footer">

@@ -8,7 +8,8 @@
             "destinationAddress": "Jl. adas",
             "city": "Semarang",
             "weight": "1",
-            "jenis": "REG"
+            "jenis": "REG",
+            "biaya": 0
         },
         {
             "logisticId": "L005",
@@ -18,7 +19,8 @@
             "destinationAddress": "Jl Asia Afrika No. 1",
             "city": "Bandung",
             "weight": "3",
-            "jenis": "ONS"
+            "jenis": "ONS",
+            "biaya": 72000
         },
         {
             "logisticId": "L002",
@@ -28,7 +30,32 @@
             "destinationAddress": "Jl Asia Afrika No. 69",
             "city": "Bandung",
             "weight": "3.5",
-            "jenis": "REG"
+            "jenis": "REG",
+            "biaya": 57750
+        },
+        {
+            "logisticId": "L004",
+            "originAddress": "Salatiga",
+            "shipper": "williamirsal",
+            "addressee": "Angel L.",
+            "destinationAddress": "Jl. Asia-Afrika 1",
+            "city": "Bandung",
+            "status": "-",
+            "weight": "5",
+            "jenis": "REG",
+            "biaya": 82500
+        },
+        {
+            "logisticId": "L003",
+            "originAddress": "Salatiga",
+            "shipper": "williamirsal",
+            "addressee": "Adji",
+            "destinationAddress": "Jl. Braga",
+            "city": "Bandung",
+            "status": "-",
+            "weight": "3",
+            "jenis": "ECO",
+            "biaya": 37500
         }
     ]
 }

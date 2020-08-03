@@ -61,57 +61,29 @@ $customers = json_decode($customerfile, true);
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Logistic Form</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Customer Form</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="./logistics/new.php">
+          <form method="POST" action="./customers/new.php">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label>Logistic ID</label>
-                <input type="text" class="form-control" id="txtLogisticId" name="logisticId" required>
+                <label>Username</label>
+                <input type="text" class="form-control" id="txtUsername" name="username" required>
               </div>
               <div class="form-group col-md-6">
-                <label>Origin</label>
-                <input type="text" class="form-control" id="txtLogisticOrigin" name="originAddress" required>
+                <label>Password</label>
+                <input type="password" class="form-control" id="txtPassword" name="password" required>
               </div>
               <div class="form-group col-md-6">
-                <label>Shipper</label>
-                <input type="text" class="form-control" id="txtLogisticShipper" name="shipper" required>
+                <label>Email</label>
+                <input type="email" class="form-control" id="txtEmail" name="email" required>
               </div>
               <div class="form-group col-md-6">
-                <label>Addressee</label>
-                <input type="text" class="form-control" id="txtLogisticAddressee" name="addressee" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Destination Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="destinationAddress" required>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-5">
-                <label>City</label>
-                <input type="text" class="form-control" id="inputCity" name="city" required>
-              </div>
-              <div class="form-group col-md-1">
-                <input type="hidden" class="form-control" id="inputStatus" name="status" value="-" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label>Weight</label>
-                <input type="text" class="form-control" id="inputWeight" name="weight" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label>Type</label>
-                <select class="form-control" name="jenis">
-                  <option selected disabled>...</option>
-                  <option>SDS</option>
-                  <option>ONS</option>
-                  <option>TDS</option>
-                  <option>REG</option>
-                  <option>ECO</option>
-                </select>
+                <label>Phone Number</label>
+                <input type="text" class="form-control" id="txtPhoneNumber" name="phonenumber" required>
               </div>
             </div>
         </div>
@@ -123,103 +95,6 @@ $customers = json_decode($customerfile, true);
       </div>
     </div>
   </div>
-
-  <!-- Modal -->
-  <!-- <div class="modal fade" id="modalCustomer" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Customer Form</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form method="POST" action="newcustomer.php">
-        <div class="form-group">
-          <label for="inputUsername" class="sr-only">Username</label>
-          <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" required autofocus>
-        </div>
-        <div class="form-group">
-          <label for="inputEmail" class="sr-only">Email</label>
-          <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email" required autofocus>
-        </div>
-        <div class="form-group">
-          <label for="inputPhoneNumber" class="sr-only">PhoneNumber</label>
-          <input type="text" id="inputPhoneNumber" class="form-control" name="phonenumber" placeholder="Phone Number" required autofocus>
-        </div>
-        <div class="form-group">
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">Confirm</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div> -->
-
-  <!-- Modal -->
-  <!-- <div class="modal fade" id="modalEmployee" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Employee Form</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-          </div>
-        </div>
-      </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">Confirm</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">

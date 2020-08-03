@@ -1,1 +1,22 @@
-{"records":[{"username":"672017207","email":"672017207@uksw.edu","phonenumber":"081238872896","password":"jagonyaayam"},{"username":"angelx123","email":"angel.contact@gmail.com","phonenumber":"6281233445566","password":"angel123456"}]}
+{
+    "records": [
+        {
+            "username": "672017207",
+            "email": "672017207@uksw.edu",
+            "phonenumber": "081238872896",
+            "password": "jagonyaayam"
+        },
+        {
+            "username": "angelx123",
+            "email": "angel.contact@gmail.com",
+            "phonenumber": "6281233445566",
+            "password": "angel123456"
+        },
+        {
+            "username": "williamirsal",
+            "password": "williamirsal",
+            "email": "l0calh34rtz@gmail.com",
+            "phonenumber": "081236103811"
+        }
+    ]
+}

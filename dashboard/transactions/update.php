@@ -76,7 +76,7 @@ if (isset($_POST["id"])) {
             <span class="help-block"></span>
           </div>
           <div class="form-group col-md-4">
-            <label for="inputEmployee">Logistic</label>
+            <label>Logistic</label>
             <select class="form-control" name="logistic_id">
               <option><?php echo $jsonfile["logistic_id"] ?></option>
               <?php
@@ -88,13 +88,13 @@ if (isset($_POST["id"])) {
             <span class="help-block"></span>
           </div>
           <div class="form-group col-md-4">
-            <label for="inputEmployee">Processed By</label>
-            <input type="text" required="required" class="form-control" id="inputEmployee" value="<?php echo $_SESSION['administrator'] ?>" name="employee_id" placeholder="Employee">
+            <label>Processed By</label>
+            <input type="text" required="required" class="form-control" value="<?php echo $_SESSION['administrator'] ?>" name="employee_id" placeholder="Employee">
             <span class="help-block"></span>
           </div>
           <div class="form-group col-md-4">
-            <label for="inputEmployee">Location Status</label>
-            <input type="text" required="required" class="form-control" id="inputEmployee" value="<?php echo $cabang ?>" name="transaction_status" placeholder="Lokasi Cabang">
+            <label>Location Status</label>
+            <input type="text" required="required" class="form-control" value="<?php echo $cabang ?>" name="transaction_status" placeholder="Lokasi Cabang">
             <span class="help-block"></span>
           </div>
 
