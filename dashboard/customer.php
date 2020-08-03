@@ -121,7 +121,7 @@ $customers = json_decode($customerfile, true);
           </ul>
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Logistic Form</span>
+            <span>Customer Form</span>
             <button type="button" class="btn btn-outline-dark d-flex align-items-center text-muted" data-toggle="modal" data-target="#modalLogistic">
               <span data-feather="plus-circle"></span>
             </button>

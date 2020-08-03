@@ -94,7 +94,7 @@ if (isset($_POST["id"])) {
           </div>
           <div class="form-group col-md-4">
             <label>Location Status</label>
-            <input type="text" required="required" class="form-control" value="<?php echo $cabang ?>" name="transaction_status" placeholder="Lokasi Cabang">
+            <input type="text" required="required" class="form-control" value="<?php echo $jsonfile['transaction_status'] ?>" name="transaction_status" placeholder="Lokasi Cabang">
             <span class="help-block"></span>
           </div>
 

@@ -13,6 +13,13 @@
             "logistic_id": "L002",
             "employee_id": "IWDSalatiga",
             "transaction_status": "Processing package in Salatiga"
+        },
+        {
+            "transaction_id": "TR003",
+            "transaction_date": "2020-08-04 06:54:05am",
+            "logistic_id": "L003",
+            "employee_id": "IWDSalatiga",
+            "transaction_status": "Departs from Salatiga"
         }
     ]
 }
