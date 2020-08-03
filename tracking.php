@@ -36,17 +36,19 @@ if (!isset($_SESSION['username'])) {
   <h1 class="cover-heading pb-3">Track</h1>
   <form method="POST">
     <div class="input-group mb-3">
-        <input type='text' class='form-control' placeholder='Enter Transaction number' name='tracking_number' id='tracking_number'>
+      <input type='text' class='form-control' placeholder='Enter Transaction number' name='tracking_number' id='tracking_number'>
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="submit">Find</button>
       </div>
     </div>
   </form>
-  <?php if (isset($status)) : ?>
-    <h3>Status Terkini <?php echo $nomor;?></h3>
-    <p><?php echo $status." ✔" ?></p>
-  <?php else : ?>
-    <h3>Nomor tracking tidak ditemukan ❌</h3>
+  <?php if (isset($_POST['tracking_number'])) : ?>
+    <?php if (!empty($status)) : ?>
+      <h3>Status Terkini <?php echo $nomor; ?></h3>
+      <p><?php echo $status . " ✔"; ?></p>
+    <?php else : ?>
+      <h3>Nomor tracking tidak ditemukan ❌</h3>
+    <?php endif; ?>
   <?php endif; ?>
 </main>
 <?php
